@@ -1,6 +1,6 @@
 # Thunderbird Addon Options Manager
 
-This guide explains how to use the provided files to manage options page in a Thunderbird extension.
+This guide explains how to use the provided files to manage the options page in a Thunderbird extension.
 <br>These files facilitate the handling of user preferences, providing a framework for both the presentation and persistence of settings.
 
 
