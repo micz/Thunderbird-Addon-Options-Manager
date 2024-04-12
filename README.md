@@ -107,7 +107,7 @@ The method will load the string_pref value if present, or the default one, to th
 
 ## How to contribute
 
-Feel free to make a pull request to improve the methods or this guide.
+Feel free to make a pull request to improve the code or this guide.
 
 
 
