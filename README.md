@@ -91,13 +91,25 @@ In your extension javscript files you have to import the needed objects like thi
 import { ADDON_prefs } from '<PATH/TO/THE/FILES/th-addon-options.js';
 ```
 
-And get the preferences using the `getPref` method:
+And get a single preference using the `getPref` method:
 
 ```javascript
 let string_pref = await ADDON_prefs.getPref("string_pref");
 ```
 The method will load the string_pref value if present, or the default one, to the `string_pref` variable.
 
+<br>
+
+Otherwise you can get more preferences at once using the `getPrefs` method:
+
+```javascript
+let string_prefs = await ADDON_prefs.getPrefs(["test_number","test_string"]);
+```
+The method will load the values if present, or the default ones, to an object like:
+
+```javascript
+{"test_number":81,"test_string":"hola!"}
+```
 
 
 <br>
