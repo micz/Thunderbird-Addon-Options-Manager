@@ -49,8 +49,8 @@ export const ADDON_prefs = {
   async getPref(pref_id){
     let obj = {};
     obj[pref_id] = prefs_default[pref_id];
-    console.log(JSON.stringify(obj));
     let prefs = await browser.storage.sync.get(obj)
+    console.log("ADDON_prefs.getPref: " + JSON.stringify(prefs));
     return prefs[pref_id];
   },
 
@@ -60,8 +60,8 @@ export const ADDON_prefs = {
     pref_ids.forEach(pref_id => {
       obj[pref_id] = prefs_default[pref_id];
     });
-    console.log(JSON.stringify(obj));
     let prefs = await browser.storage.sync.get(obj)
+    console.log("ADDON_prefs.getPrefs: " + JSON.stringify(prefs));
     let result = {};
     pref_ids.forEach(pref_id => {
       result[pref_id] = prefs[pref_id];
