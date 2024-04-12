@@ -54,6 +54,22 @@ export const ADDON_prefs = {
     return prefs[pref_id];
   },
 
+  
+  async getPrefs(pref_ids){
+    let obj = {};
+    pref_ids.forEach(pref_id => {
+      obj[pref_id] = prefs_default[pref_id];
+    });
+    console.log(JSON.stringify(obj));
+    let prefs = await browser.storage.sync.get(obj)
+    let result = {};
+    pref_ids.forEach(pref_id => {
+      result[pref_id] = prefs[pref_id];
+    });
+    return result;
+  },
+
+
   restoreOptions() {
     function setCurrentChoice(result) {
       document.querySelectorAll(".option-input").forEach(element => {
