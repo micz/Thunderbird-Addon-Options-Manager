@@ -22,7 +22,7 @@ import { prefs_default } from './th-addon-options-default.js';
 export const ADDON_prefs = {
 
   saveOptions(e) {
-    console.log('Saving options: ' + e.target.id + ' = ' + e.target.value);
+    console.log('Saving option: ' + e.target.id + ' = ' + e.target.value);
     e.preventDefault();
     let options = {};
     let element = e.target;
