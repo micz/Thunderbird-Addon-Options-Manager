@@ -18,7 +18,7 @@
 
 
 export const prefs_default = {
-    'num_pref': 7,
-    'bool_pref': true,
-    'string_pref': 'default',
+    'test_number': 7,
+    'test_bool': true,
+    'test_string': 'default',
 }
