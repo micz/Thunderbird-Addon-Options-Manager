@@ -12,7 +12,7 @@ This guide explains how to use the provided files to manage options page in a Th
 
 ## Overview
 
-- **`th-addon-options.js**: Contains logic for saving user preferences. It imports default settings from `th-addon-options-default.js` and provides methods to handle form submissions and preference storage.
+- **`th-addon-options.js**`: Contains logic for saving user preferences. It imports default settings from `th-addon-options-default.js` and provides methods to handle form submissions and preference storage.
 - **`th-addon-options-default.js`**: Defines default preferences for the extension. This can be customized to include any number of default settings your extension requires.
 - **`th-addon-options-onload.js`**: Loads the needed scripts in the option page.
 - **`th-addon-options.html`**: The HTML options example page.
