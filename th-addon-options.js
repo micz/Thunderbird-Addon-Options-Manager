@@ -15,23 +15,26 @@ import { prefs_default } from './th-addon-options-default.js';
 export const ADDON_prefs = {
 
   saveOptions(e) {
-    console.log('Saving option: ' + e.target.id + ' = ' + e.target.value);
     e.preventDefault();
     let options = {};
     let element = e.target;
       switch (element.type) {
         case 'checkbox':
           options[element.id] = element.checked;
+          console.log('Saving option: ' + element.id + ' = ' + element.checked);
           break;
         case 'number':
           options[element.id] = element.valueAsNumber;
+          console.log('Saving option: ' + element.id + ' = ' + element.valueAsNumber);
           break;
         case 'text':
           options[element.id] = element.value.trim();
+          console.log('Saving option: ' + element.id + ' = ' + element.value);
           break;
         default:
           if (element.tagName === 'SELECT') {
             options[element.id] = element.value;
+            console.log('Saving option: ' + element.id + ' = ' + element.value);
           }else{
             console.log('Unhandled input type:', element.type);
           }
