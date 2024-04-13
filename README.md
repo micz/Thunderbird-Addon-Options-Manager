@@ -131,4 +131,4 @@ Feel free to make a pull request to improve the code or this guide.
 
 ## LICENSE
 
-This code is distributed under the [GPL 3 license](LICENSE).
+This code is distributed under the [MPL 2.0 license](LICENSE).
