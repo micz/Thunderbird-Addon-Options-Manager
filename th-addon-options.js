@@ -73,21 +73,21 @@ export const ADDON_prefs = {
         switch (element.type) {
           case 'checkbox':
             let default_checkbox_value = defaultValue !== undefined ? defaultValue : false;
-            element.checked = result[element.id] || default_checkbox_value;
+            element.checked = result[element.id] !== undefined ? result[element.id] : default_checkbox_value;
             break;
           case 'number':
             let default_number_value = defaultValue !== undefined ? defaultValue : 0;
-            element.value = result[element.id] || default_number_value;
+            element.value = result[element.id] !== undefined ? result[element.id] : default_number_value;
             break;
           case 'text':
             let default_text_value = defaultValue !== undefined ? defaultValue : '';
-            element.value = result[element.id] || default_text_value;
+            element.value = result[element.id] !== undefined ? result[element.id] : default_text_value;
             break;
           default:
           if (element.tagName === 'SELECT') {
             let default_select_value = defaultValue !== undefined ? defaultValue : '';
             if(element.id == 'reply_type') default_select_value = 'reply_all';
-            element.value = result[element.id] || default_select_value;
+            element.value = result[element.id] !== undefined ? result[element.id] : default_select_value;
             if (element.value === '') {
               element.selectedIndex = -1;
             }
