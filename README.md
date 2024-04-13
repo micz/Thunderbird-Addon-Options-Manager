@@ -40,6 +40,16 @@ This guide explains how to use the provided files to manage the options page in 
 
 
 
+### Change the options page
+
+Modify the `th-addon-options.html` file to show all your needed settings.
+
+
+
+<br>
+
+
+
 ### Defining Default Preferences
 
 Modify `th-addon-options-default.js` to include all the default settings for your extension.
@@ -91,7 +101,7 @@ In your extension javscript files you have to import the needed objects like thi
 import { ADDON_prefs } from '<PATH/TO/THE/FILES/th-addon-options.js';
 ```
 
-And get a single preference using the `getPref` method:
+Get a single preference using the `getPref` method:
 
 ```javascript
 let string_pref = await ADDON_prefs.getPref("string_pref");
@@ -100,7 +110,7 @@ The method will load the string_pref value if present, or the default one, to th
 
 <br>
 
-Otherwise you can get more preferences at once using the `getPrefs` method:
+Otherwise you can get many preferences at once using the `getPrefs` method:
 
 ```javascript
 let string_prefs = await ADDON_prefs.getPrefs(["test_number","test_string"]);
@@ -119,7 +129,7 @@ The method will load the values if present, or the default ones, to an object li
 
 ## How to contribute
 
-Feel free to make a pull request to improve the code or this guide.
+Feel free to fork the repository and make a pull request to improve the code or this guide.
 
 
 
