@@ -113,7 +113,7 @@ The method will load the string_pref value if present, or the default one, to th
 Otherwise you can get many preferences at once using the `getPrefs` method:
 
 ```javascript
-let string_prefs = await ADDON_prefs.getPrefs(["test_number","test_string"]);
+let prefs = await ADDON_prefs.getPrefs(["test_number","test_string"]);
 ```
 The method will load the values if present, or the default ones, to an object like:
 
