@@ -122,6 +122,23 @@ The method will load the values if present, or the default ones, to an object li
 ```
 
 
+
+<br>
+
+
+
+
+## Using an external logger
+By default the methods will log to `console`.
+You can define a custom logger, assigning it to the `logger` proprierty:
+
+```
+ADDON_prefs.logger = myCustomLogger
+```
+The custom logger must implement the `log` method: `myCustomLogger.log(log_message)`.
+
+
+
 <br>
 
 
