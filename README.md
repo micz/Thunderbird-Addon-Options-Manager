@@ -106,6 +106,7 @@ Get a single preference using the `getPref` method:
 ```javascript
 let string_pref = await ADDON_prefs.getPref("string_pref");
 ```
+
 The method will load the string_pref value if present, or the default one, to the `string_pref` variable.
 
 <br>
@@ -115,6 +116,7 @@ Otherwise you can get many preferences at once using the `getPrefs` method:
 ```javascript
 let prefs = await ADDON_prefs.getPrefs(["test_number","test_string"]);
 ```
+
 The method will load the values if present, or the default ones, to an object like:
 
 ```javascript
@@ -128,11 +130,27 @@ The method will load the values if present, or the default ones, to an object li
 
 
 
+## Saving a single preference
+If you need to save a single preference without using the automatic method described above, you can use the `setPref` async method.
+
+```javascript
+ADDON_prefs.setPref("test_string",pref_value);
+```
+
+"test_string" is the preference id, to be used to retrieve it when needed, and `pref_value` is variable containing the value to be saved.
+
+
+
+<br>
+
+
+
+
 ## Using an external logger
 By default the methods will log to `console`.
 You can define a custom logger, assigning it to the `logger` proprierty:
 
-```
+```javascript
 ADDON_prefs.logger = myCustomLogger
 ```
 The custom logger must implement the `log` method: `myCustomLogger.log(log_message)`.
