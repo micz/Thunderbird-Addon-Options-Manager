@@ -44,6 +44,13 @@ export const ADDON_prefs = {
     browser.storage.sync.set(options);
   },
 
+  async setPref(pref_id, value){
+    let obj = {};
+    obj[pref_id] = value;
+    ADDON_prefs.logger.log('Saving option: ' + pref_id + ' = ' + JSON.stringify(value));
+    browser.storage.sync.set(obj)
+  },
+
   async getPref(pref_id){
     let obj = {};
     obj[pref_id] = prefs_default[pref_id];
