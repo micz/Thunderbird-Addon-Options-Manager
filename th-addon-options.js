@@ -14,6 +14,8 @@ import { prefs_default } from './th-addon-options-default.js';
 
 export const ADDON_prefs = {
 
+  logger: console,
+
   saveOptions(e) {
     e.preventDefault();
     let options = {};
@@ -21,22 +23,22 @@ export const ADDON_prefs = {
       switch (element.type) {
         case 'checkbox':
           options[element.id] = element.checked;
-          console.log('Saving option: ' + element.id + ' = ' + element.checked);
+          ADDON_prefs.logger.log('Saving option: ' + element.id + ' = ' + element.checked);
           break;
         case 'number':
           options[element.id] = element.valueAsNumber;
-          console.log('Saving option: ' + element.id + ' = ' + element.valueAsNumber);
+          ADDON_prefs.logger.log('Saving option: ' + element.id + ' = ' + element.valueAsNumber);
           break;
         case 'text':
           options[element.id] = element.value.trim();
-          console.log('Saving option: ' + element.id + ' = ' + element.value);
+          ADDON_prefs.logger.log('Saving option: ' + element.id + ' = ' + element.value);
           break;
         default:
           if (element.tagName === 'SELECT') {
             options[element.id] = element.value;
-            console.log('Saving option: ' + element.id + ' = ' + element.value);
+            ADDON_prefs.logger.log('Saving option: ' + element.id + ' = ' + element.value);
           }else{
-            console.log('Unhandled input type:', element.type);
+            ADDON_prefs.logger.log('Unhandled input type:', element.type);
           }
       }
     browser.storage.sync.set(options);
@@ -46,7 +48,7 @@ export const ADDON_prefs = {
     let obj = {};
     obj[pref_id] = prefs_default[pref_id];
     let prefs = await browser.storage.sync.get(obj)
-    console.log("ADDON_prefs.getPref: " + JSON.stringify(prefs));
+    ADDON_prefs.logger.log("ADDON_prefs.getPref: " + JSON.stringify(prefs));
     return prefs[pref_id];
   },
 
@@ -57,7 +59,7 @@ export const ADDON_prefs = {
       obj[pref_id] = prefs_default[pref_id];
     });
     let prefs = await browser.storage.sync.get(obj)
-    console.log("ADDON_prefs.getPrefs: " + JSON.stringify(prefs));
+    ADDON_prefs.logger.log("ADDON_prefs.getPrefs: " + JSON.stringify(prefs));
     let result = {};
     pref_ids.forEach(pref_id => {
       result[pref_id] = prefs[pref_id];
@@ -92,14 +94,14 @@ export const ADDON_prefs = {
               element.selectedIndex = -1;
             }
           }else{
-            console.log('Unhandled input type:', element.type);
+            ADDON_prefs.logger.log('Unhandled input type:', element.type);
           }
         }
       });
     }
 
     function onError(error) {
-      console.log(`Error: ${error}`);
+      ADDON_prefs.logger.log(`Error: ${error}`);
     }
 
     let getting = browser.storage.sync.get(null);
