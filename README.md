@@ -134,7 +134,7 @@ The method will load the values if present, or the default ones, to an object li
 If you need to save a single preference without using the automatic method described above, you can use the `setPref` async method.
 
 ```javascript
-ADDON_prefs.setPref("test_string",pref_value);
+ADDON_prefs.setPref("test_string", pref_value);
 ```
 
 "test_string" is the preference id, to be used to retrieve it when needed, and `pref_value` is a variable containing the value to be saved.
