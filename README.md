@@ -156,6 +156,14 @@ ADDON_prefs.logger = myCustomLogger
 The custom logger must implement the `log` method: `myCustomLogger.log(log_message)`.
 
 
+<br>
+
+## Support this work!
+Are you using this code in your Thunderbird addon?
+<br>Consider to support the development making a small donation. [Click here!](https://www.paypal.com/donate/?business=UHN4SXPGEXWQL&no_recurring=1&item_name=Thunderbird+Addon+Option+Manager&currency_code=EUR)
+
+
+
 
 <br>
 
