@@ -37,7 +37,10 @@ export const ADDON_prefs = {
           if (element.tagName === 'SELECT') {
             options[element.id] = element.value;
             ADDON_prefs.logger.log('Saving option: ' + element.id + ' = ' + element.value);
-          }else{
+          } else if (element.tagName === 'TEXTAREA') {
+            options[element.id] = element.value.trim();
+            ADDON_prefs.logger.log('Saving option: ' + element.id + ' = ' + element.value.trim());
+          } else {
             ADDON_prefs.logger.log('Unhandled input type:', element.type);
           }
       }
