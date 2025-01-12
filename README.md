@@ -170,6 +170,17 @@ Are you using this code in your Thunderbird addon?
 
 
 
+## Find out who is using this code!
+
+Check the [list of add-ons](WHO_IS_USING_IT.md) that are using this code and list also your one!
+
+
+
+<br>
+
+
+
+
 ## How to contribute
 
 Feel free to fork the repository and make a pull request to improve the code or this guide.
