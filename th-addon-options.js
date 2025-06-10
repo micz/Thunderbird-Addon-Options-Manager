@@ -33,16 +33,16 @@ export const ADDON_prefs = {
           options[element.id] = element.value.trim();
           ADDON_prefs.logger.log('Saving option: ' + element.id + ' = ' + element.value);
           break;
+        case 'select-one':
+          options[element.id] = element.value;
+          ADDON_prefs.logger.log('Saving option: ' + element.id + ' = ' + element.value);
+          break;
+        case 'textarea':
+          options[element.id] = element.value.trim();
+          ADDON_prefs.logger.log('Saving option: ' + element.id + ' = ' + element.value.trim());
+          break;
         default:
-          if (element.tagName === 'SELECT') {
-            options[element.id] = element.value;
-            ADDON_prefs.logger.log('Saving option: ' + element.id + ' = ' + element.value);
-          } else if (element.tagName === 'TEXTAREA') {
-            options[element.id] = element.value.trim();
-            ADDON_prefs.logger.log('Saving option: ' + element.id + ' = ' + element.value.trim());
-          } else {
-            ADDON_prefs.logger.log('Unhandled input type:', element.type);
-          }
+          ADDON_prefs.logger.log('Unhandled input type:', element.type);
       }
     browser.storage.sync.set(options);
   },
