@@ -95,6 +95,9 @@ export const ADDON_prefs = {
             let default_text_value = defaultValue !== undefined ? defaultValue : '';
             element.value = result[element.id] !== undefined ? result[element.id] : default_text_value;
             break;
+           case 'textarea':
+            element.value = result[element.id];
+            break;
           default:
           if (element.tagName === 'SELECT') {
             let default_select_value = defaultValue !== undefined ? defaultValue : '';
